@@ -1,0 +1,27 @@
+{
+  "sessionId": "session-2025-06-23_11-38-08-AM",
+  "startTime": "2025-06-23T06:08:08.789Z",
+  "deviceInfo": {
+    "brand": "HUAWEI",
+    "model": "MAR-LX2",
+    "deviceID": "TRJDU19404007242",
+    "androidId": "9e0e5cc8158529a",
+    "platformVersion": "10",
+    "apiVersion": "29",
+    "locale": "en-IN",
+    "displayDensity": 480,
+    "screenSize": "1080x2312",
+    "timeZone": "Asia/Kolkata"
+  },
+  "testResults": [
+    {
+      "testName": "testupdate",
+      "scriptPath": "tests/binogi/testcases/home/testupdate.js",
+      "status": "passed",
+      "logs": "✅ Connected device ID: TRJDU19404007242\n✅ Clicked element with \"LET'S GO\"\n✅ Clicked element with \"Student\"\n✅ Clicked element \"Home\"\n✅ Clicked element with \"Scan\"\n✅ Clicked element with \"Assignments\"\n✅ Clicked element with \"Search\"\n✅ Clicked element with \"Bookmarks\"\n✅ Clicked element with \"Scan\"\n✅ Clicked element with \"Assignments\"\n✅ Clicked element with \"Search\"\n✅ Clicked element with \"Home\"\n✅ Clicked element with \"Mathematics\"\n✅ Clicked element with \"Introduction to Mathematics\"\n✅ Clicked element \"Arithmetic\"\n✅ Clicked element with \"Order of operations\"\n✅ Clicked element with \"Home\"",
+      "logcatErrors": "06-23 11:31:21.224  1348  1503 E WindowManager: win=Window{91a8259 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 11:38:18.308  2015  3562 E DollieAdapterService: notifyActivityState pkg:com.binogi/com.binogi.MainActivity state:2 fg:true mUid:10516\n06-23 11:38:18.535  1348  1503 E WindowManager: win=Window{f032e62 u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 11:38:18.721  6728  6829 E com.binogi: Invalid ID 0x00000000.\n06-23 11:38:20.242   655  3496 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 11:38:20.251   655  3496 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 11:38:21.055   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#3]:1338: disconnect: not connected (req=1)\n06-23 11:38:21.063  1348  7722 E InputDispatcher: Window handle Window{625af8f u0 com.binogi/com.binogi.MainActivity} has no registered input channel\n06-23 11:38:21.083  1348  7722 E InputDispatcher: Window handle Window{625af8f u0 com.binogi/com.binogi.MainActivity} has no registered input channel\n06-23 11:38:21.088   655  1529 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 11:38:21.097  1348  1595 E InputDispatcher: Window handle Window{625af8f u0 com.binogi/com.binogi.MainActivity} has no registered input channel\n06-23 11:38:21.111   655   737 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 11:38:21.242  1348  1503 E WindowManager: win=Window{625af8f u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 11:38:37.067   655  1529 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 11:38:37.103   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 11:38:37.588   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#3]:1338: disconnect: not connected (req=1)\n06-23 11:38:37.611   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 11:38:37.629   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 11:38:37.799  1348  1503 E WindowManager: win=Window{d8a45a0 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true"
+    }
+  ],
+  "endTime": "2025-06-23T06:08:59.964Z",
+  "duration": "51.175s"
+}

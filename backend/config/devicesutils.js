@@ -118,6 +118,7 @@ function getDeviceInfoViaADB() {
     return {
       brand: parseProp("ro.product.brand"),
       model: parseProp("ro.product.model"),
+      deviceID: deviceId,
       androidId: execSync(`"${adbPath}" -s ${deviceId} shell settings get secure android_id`).toString().trim(),
       platformVersion: parseProp("ro.build.version.release"),
       apiVersion: parseProp("ro.build.version.sdk"),
@@ -161,22 +162,45 @@ function getConnectedDeviceModal() {
   }
 }
 
-function captureAndSaveDeviceInfo() {
-  const device = getConnectedDeviceModal(); 
-  const info = getDeviceInfoViaADB(); 
+function captureAndSaveDeviceInfo(customName, deviceId, callback) {
+  const info = getDeviceInfoViaADB(); // Should return parsed object
 
-  if (!device || device.error || !info) {
+  if (!info) {
     console.error("❌ Unable to capture device info.");
-    return;
+    return callback({ status: 500, message: 'Device info capture failed' });
   }
 
   const deviceInfoToSave = {
     ...info,
-    deviceId: device.deviceId,
-    customName: device.model 
+    deviceId,
+    customName
   };
 
-  saveDeviceInfoToJSON(deviceInfoToSave);
+  const filePath = path.join(__dirname, '../data/devices.json');
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) return callback({ status: 500, message: 'Read failed' });
+
+    let json = [];
+    try {
+      json = JSON.parse(data);
+    } catch (e) {
+      return callback({ status: 500, message: 'Invalid JSON format' });
+    }
+
+    const alreadyExists = json.some(item => item.deviceId === deviceId);
+    if (alreadyExists) {
+      return callback({ status: 409, message: 'Device already exists' });
+    }
+
+    json.push(deviceInfoToSave);
+
+    fs.writeFile(filePath, JSON.stringify(json, null, 2), 'utf8', (err) => {
+      if (err) return callback({ status: 500, message: 'Write failed' });
+
+      return callback(null, { status: 200, message: 'Device saved successfully', data: deviceInfoToSave });
+    });
+  });
 }
 
 

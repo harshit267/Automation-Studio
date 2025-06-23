@@ -1,0 +1,27 @@
+{
+  "sessionId": "session-2025-06-23_10-21-56-AM",
+  "startTime": "2025-06-23T04:51:56.394Z",
+  "deviceInfo": {
+    "brand": "HUAWEI",
+    "model": "MAR-LX2",
+    "deviceID": "TRJDU19404007242",
+    "androidId": "9e0e5cc8158529a",
+    "platformVersion": "10",
+    "apiVersion": "29",
+    "locale": "en-IN",
+    "displayDensity": 480,
+    "screenSize": "1080x2312",
+    "timeZone": "Asia/Kolkata"
+  },
+  "testResults": [
+    {
+      "testName": "testupdate",
+      "scriptPath": "tests/binogi/testcases/home/testupdate.js",
+      "status": "passed",
+      "logs": "✅ Connected device ID: TRJDU19404007242\n✅ Clicked element with \"LET'S GO\"\n✅ Clicked element with \"Student\"",
+      "logcatErrors": "06-23 10:21:20.548  1348  1503 E WindowManager: win=Window{166ba49 u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 10:21:37.360  1348  1503 E WindowManager: win=Window{aac4933 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 10:22:06.708  1348  1503 E WindowManager: win=Window{d292f1d u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 10:22:06.894 21818 21918 E com.binogi: Invalid ID 0x00000000.\n06-23 10:22:08.470   655   737 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 10:22:08.487   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 10:22:09.428   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#3]:1338: disconnect: not connected (req=1)\n06-23 10:22:09.440  1348  8800 E InputDispatcher: Window handle Window{c828cb8 u0 com.binogi/com.binogi.MainActivity} has no registered input channel\n06-23 10:22:09.454   655   737 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 10:22:09.455  1348  8796 E InputDispatcher: Window handle Window{c828cb8 u0 com.binogi/com.binogi.MainActivity} has no registered input channel\n06-23 10:22:09.470  1348  8796 E InputDispatcher: Window handle Window{c828cb8 u0 com.binogi/com.binogi.MainActivity} has no registered input channel\n06-23 10:22:09.479   655   737 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 10:22:09.492  1348  1595 E InputDispatcher: Window handle Window{c828cb8 u0 com.binogi/com.binogi.MainActivity} has no registered input channel\n06-23 10:22:09.615  1348  1503 E WindowManager: win=Window{c828cb8 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 10:22:25.723   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 10:22:25.772   655  1529 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)"
+    }
+  ],
+  "endTime": "2025-06-23T04:52:26.953Z",
+  "duration": "30.559s"
+}

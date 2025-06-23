@@ -1,0 +1,27 @@
+{
+  "sessionId": "session-2025-06-23_10-12-05-AM",
+  "startTime": "2025-06-23T04:42:05.553Z",
+  "deviceInfo": {
+    "brand": "HUAWEI",
+    "model": "MAR-LX2",
+    "deviceID": "TRJDU19404007242",
+    "androidId": "9e0e5cc8158529a",
+    "platformVersion": "10",
+    "apiVersion": "29",
+    "locale": "en-IN",
+    "displayDensity": 480,
+    "screenSize": "1080x2312",
+    "timeZone": "Asia/Kolkata"
+  },
+  "testResults": [
+    {
+      "testName": "testupdate",
+      "scriptPath": "tests/binogi/testcases/home/testupdate.js",
+      "status": "failed",
+      "logs": "✅ Connected device ID: TRJDU19404007242",
+      "logcatErrors": "06-23 10:10:15.240  1348  1348 E HwBastetService: name: com.binogi\n06-23 10:10:15.504 24179 24228 E android.vendin: Failed to open APK '/data/app/com.binogi-ylgE2JqSZ7LKbNVwLjB1sA==/base.apk' I/O error\n06-23 10:10:15.505 24179 24228 E ResourcesManager: failed to add asset path /data/app/com.binogi-ylgE2JqSZ7LKbNVwLjB1sA==/base.apk\n06-23 10:10:15.522  1348  1512 E AwareLog: RMS.AwareIntelligentRecg: delete pkg:com.binogi userid:0 from iAware.db\n06-23 10:10:15.617  1348  1657 E PasspointManager: No app ops listener found for com.binogi\n06-23 10:10:15.807  2522 15662 E HwNaturalBase: [Binder:2522_C]: clearDataByOwner ignore: Found null values with the given ownerPkgName is[com.binogi]."
+    }
+  ],
+  "endTime": "2025-06-23T04:42:06.791Z",
+  "duration": "1.238s"
+}

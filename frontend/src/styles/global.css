@@ -29,6 +29,10 @@ body {
   text-align: left;
   font-size: 14px;
   color: #34495e;
+  width: fit-content;
+  /* min-width: 300px; */
+  align-self: center;
+  /* text-align: center; */
 }
 
 .apk-info p {

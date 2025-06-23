@@ -1,0 +1,27 @@
+{
+  "sessionId": "session-2025-06-23_10-27-37-AM",
+  "startTime": "2025-06-23T04:57:37.743Z",
+  "deviceInfo": {
+    "brand": "HUAWEI",
+    "model": "MAR-LX2",
+    "deviceID": "TRJDU19404007242",
+    "androidId": "9e0e5cc8158529a",
+    "platformVersion": "10",
+    "apiVersion": "29",
+    "locale": "en-IN",
+    "displayDensity": 480,
+    "screenSize": "1080x2312",
+    "timeZone": "Asia/Kolkata"
+  },
+  "testResults": [
+    {
+      "testName": "testupdate",
+      "scriptPath": "tests/binogi/testcases/home/testupdate.js",
+      "status": "failed",
+      "logs": "✅ Connected device ID: TRJDU19404007242",
+      "logcatErrors": "06-23 10:26:05.294 25414 25414 E com.binogi: Not starting debugger since process cannot load the jdwp agent.\n06-23 10:26:06.052  2015  3562 E DollieAdapterService: notifyActivityState pkg:com.binogi/com.binogi.MainActivity state:2 fg:true mUid:10516\n06-23 10:26:06.312  1348  1503 E WindowManager: win=Window{66ad399 u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 10:26:06.597 25414 25531 E com.binogi: Invalid ID 0x00000000.\n06-23 10:26:08.357   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 10:26:08.389   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 10:26:12.926   655  3496 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#3]:1338: disconnect: not connected (req=1)\n06-23 10:26:12.964   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 10:26:12.982   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 10:26:13.122  1348  1503 E WindowManager: win=Window{454d0e7 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true"
+    }
+  ],
+  "endTime": "2025-06-23T04:57:39.070Z",
+  "duration": "1.327s"
+}

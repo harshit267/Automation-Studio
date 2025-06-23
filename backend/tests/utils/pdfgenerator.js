@@ -65,34 +65,44 @@ function generatePDFReport(sessionData, outputPath) {
 // Helper to draw a gray/red box with bullet points for logs
 function drawTextBox(doc, text, bgColor, textColor, fontSize) {
   const boxWidth = 500;
-  const maxLines = 10;
+  const lineSpacing = 4;
+  const topMargin = 45;
+  const bottomMargin = 50;
+  const maxBoxHeightPerPage = doc.page.height - bottomMargin - topMargin;
+
   const lines = (text || "None")
-    .split('\n')
-    .slice(0, maxLines)
+    .split("\n")
     .map(line =>
       line
         .trim()
-        .replace(/^['"`•\-–\s]+/, '') // remove starting quotes, dashes, bullets, whitespace
+        .replace(/^['"`•\-–\s]+/, "")
     )
     .filter(line => line.length > 0);
 
-  const startY = doc.y;
-  const boxHeight = lines.length * (fontSize + 4) + 10;
+  let yOffset = doc.y;
+  let boxHeight = 0;
 
-  doc.rect(45, startY - 2, boxWidth, boxHeight).fill(bgColor);
-  doc.fillColor(textColor).font("Courier").fontSize(fontSize);
+  lines.forEach((line, i) => {
+    const lineHeight = fontSize + lineSpacing;
 
-  let yOffset = startY + 5;
+    // Check if we need to add a new page
+    if (yOffset + lineHeight > maxBoxHeightPerPage) {
+      doc.addPage();
+      yOffset = topMargin;
+    }
 
-  lines.forEach(line => {
-    doc.text(`• ${line}`, 50, yOffset, {
-      width: boxWidth - 10,
-    });
-    yOffset += fontSize + 4;
+    // Draw background box behind this line
+    doc.rect(45, yOffset - 2, boxWidth, lineHeight + 4).fill(bgColor);
+    doc.fillColor(textColor).font("Courier").fontSize(fontSize);
+    doc.text(`• ${line}`, 50, yOffset, { width: boxWidth - 10 });
+
+    yOffset += lineHeight;
   });
 
+  // Move down after the box
   doc.moveDown(1);
 }
+
 
 
 

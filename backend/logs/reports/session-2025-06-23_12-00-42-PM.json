@@ -1,0 +1,27 @@
+{
+  "sessionId": "session-2025-06-23_12-00-42-PM",
+  "startTime": "2025-06-23T06:30:42.339Z",
+  "deviceInfo": {
+    "brand": "HUAWEI",
+    "model": "MAR-LX2",
+    "deviceID": "TRJDU19404007242",
+    "androidId": "9e0e5cc8158529a",
+    "platformVersion": "10",
+    "apiVersion": "29",
+    "locale": "en-IN",
+    "displayDensity": 480,
+    "screenSize": "1080x2312",
+    "timeZone": "Asia/Kolkata"
+  },
+  "testResults": [
+    {
+      "testName": "testupdate",
+      "scriptPath": "tests/binogi/testcases/home/testupdate.js",
+      "status": "passed",
+      "logs": "✅ Connected device ID: TRJDU19404007242\n✅ Clicked element with \"LET'S GO\"\n✅ Clicked element with \"Student\"\n❌ Element with  \"MATHEMATICS\" is not found on screen",
+      "logcatErrors": "06-23 11:55:50.530  1348  1503 E WindowManager: win=Window{478eea3 u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 11:55:53.255  1348  1503 E WindowManager: win=Window{7d69aa4 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 11:56:10.627  1348  1503 E WindowManager: win=Window{5f0143 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 12:00:48.438  2015  3562 E DollieAdapterService: notifyActivityState pkg:com.binogi/com.binogi.MainActivity state:20 fg:false mUid:10516\n06-23 12:00:48.691  2522  2130 E HwNaturalBase: [Binder:2522_B]: clearDataByOwner ignore: Found null values with the given ownerPkgName is[com.binogi].\n06-23 12:00:52.289 10906 10906 E com.binogi: Not starting debugger since process cannot load the jdwp agent.\n06-23 12:00:52.645  2015  3562 E DollieAdapterService: notifyActivityState pkg:com.binogi/com.binogi.MainActivity state:2 fg:true mUid:10516\n06-23 12:00:52.875  1348  1503 E WindowManager: win=Window{a13065e u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 12:00:53.048 10906 11015 E com.binogi: Invalid ID 0x00000000.\n06-23 12:00:54.475   655  3496 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 12:00:54.488   655  3496 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 12:00:55.379   655   737 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#3]:1338: disconnect: not connected (req=1)\n06-23 12:00:55.412   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 12:00:55.444   655  2643 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)\n06-23 12:00:55.561  1348  1503 E WindowManager: win=Window{4b69902 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true"
+    }
+  ],
+  "endTime": "2025-06-23T06:31:13.194Z",
+  "duration": "30.855s"
+}

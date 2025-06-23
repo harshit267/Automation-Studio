@@ -20,6 +20,14 @@ export default function TestCases() {
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [deviceName, setDeviceName] = useState("");
   const [deviceModel, setDeviceModel] = useState("");
+  const [deviceAndroidId, setDeviceAndroidId] = useState("");
+  const [deviceplatformVersion, setDeviceplatformVersion] = useState("");
+  const [deviceapiVersion, setDeviceapiVersion] = useState("");
+  const [devicelocale, setDevicelocale] = useState("");
+  const [devicedisplayDensity, setDevicedisplayDensity] = useState("");
+  const [devicescreenSize, setDevicescreenSize] = useState("");
+  const [deviceID, setDeviceID] = useState("");
+
   let deviceInfoBlock = null;
 
 
@@ -27,9 +35,18 @@ export default function TestCases() {
   useEffect(() => {
     axios.get(`${backendUrl}/api/testcases`).then((res) => {
       setTestCases(res.data.testCases);
-      setDeviceModel(res.data.deviceInfo.model);
-      setDeviceName(res.data.deviceInfo.deviceId);
-
+      const device = res.data.deviceInfo;
+    if (device) {
+      setDeviceModel(device.model);
+      setDeviceName(device.brand);
+      setDeviceID(device.deviceId); 
+      setDeviceAndroidId(device.androidID);
+      setDeviceplatformVersion(device.platformVersion);
+      setDeviceapiVersion(device.apiVersion);
+      setDevicelocale(device.locale);
+      setDevicedisplayDensity(device.displayDensity);
+      setDevicescreenSize(device.screenSize);
+    }
     });
 
     const socket = new WebSocket(`ws://localhost:4000`);
@@ -147,20 +164,29 @@ export default function TestCases() {
     label: test.name
   }));
 
-if (deviceName && deviceModel) {
-  deviceInfoBlock = (
-    <div className="apk-info">
-      <p><strong>Device Name:</strong> {deviceName}</p>
-      <p><strong>Device Model:</strong> {deviceModel}</p>
-    </div>
-  );
-} else if (!deviceName) {
-  deviceInfoBlock = (
-<p style={{ color: "red" , paddingLeft:"10%"}}>No Device is Connected Please connect one device first and reload the page</p>
 
-  );
 
-}
+  if (deviceName && deviceModel) {
+    deviceInfoBlock = (
+      <div className="apk-info">
+        <p><strong>Device Name:</strong> {deviceName}</p>
+        <p><strong>Device Model:</strong> {deviceModel}</p>
+        <p><strong>Device ID:</strong> {deviceID}</p>
+        <p><strong>Android ID:</strong> {deviceAndroidId}</p>
+        <p><strong>Platform Version:</strong> {deviceplatformVersion}</p>
+        <p><strong>API Version:</strong> {deviceapiVersion}</p>
+        <p><strong>Locale:</strong> {devicelocale}</p>
+        <p><strong>Display Density:</strong> {devicedisplayDensity}</p>
+        <p><strong>Screen Size:</strong> {devicescreenSize}</p>
+      </div>
+    );
+  } else if (!deviceName) {
+    deviceInfoBlock = (
+      <p style={{ color: "red", paddingLeft: "10%" }}>No Device is Connected Please connect one device first and reload the page</p>
+
+    );
+
+  }
 
 
   return (
@@ -170,7 +196,7 @@ if (deviceName && deviceModel) {
         <h2 className={styles.heading}>🧪 Test Case Manager</h2>
       </div>
 
-     {deviceInfoBlock}
+      {deviceInfoBlock}
 
       <div className={styles.layout}>
         <div className={styles.selector}>

@@ -1,6 +1,8 @@
 const express = require("express");
 const {
   getConnectedDevice,
+  captureAndSaveDeviceInfo,
+  getDeviceInfoViaADB,
 } = require("../config/devicesutils");
 const fs = require("fs");
 const path = require("path");
@@ -23,36 +25,16 @@ router.post('/get-devices', async (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-  const filePath = path.join(__dirname, '../data/devices.json');
   const newEntry = req.body.newEntry;
-  console.log(newEntry);
 
-  
+  if (!newEntry || !newEntry.name || !newEntry.ID) {
+    return res.status(400).json({ error: 'Missing name or ID' });
+  }
 
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) return res.status(500).json({ error: 'Read failed' });
+  captureAndSaveDeviceInfo(newEntry.name, newEntry.ID, (err, result) => {
+    if (err) return res.status(err.status).json({ error: err.message });
 
-    let json = [];
-    try {
-      json = JSON.parse(data);
-    } catch (e) {
-      return res.status(500).json({ error: 'Invalid JSON format' });
-    }
-if (!newEntry || !newEntry.name || !newEntry.ID) {
-  return res.status(400).json({ error: 'Missing name or ID' });
-}
-    const alreadyExists = json.some(item => item.ID === newEntry.ID);
-if (alreadyExists) {
-  return res.status(409).json({ error: 'Device already exists' });
-}
-
-
-    json.push(newEntry);
-
-    fs.writeFile(filePath, JSON.stringify(json, null, 2), (err) => {
-      if (err) return res.status(500).json({ error: 'Write failed' });
-      res.status(200).json({ message: 'Added successfully' });
-    });
+    res.status(result.status).json(result);
   });
 });
 

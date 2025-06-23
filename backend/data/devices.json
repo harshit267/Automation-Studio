@@ -2,5 +2,18 @@
   {
     "name": "Huwaei",
     "ID": "TRJDU19404007242"
+  },
+  {
+    "brand": "Itel",
+    "model": "itel L5002",
+    "androidId": "ac9acafd70992a9e",
+    "platformVersion": "9",
+    "apiVersion": "28",
+    "locale": "en-US",
+    "displayDensity": 320,
+    "screenSize": "720x1280",
+    "timeZone": "Asia/Kolkata",
+    "deviceId": "0531924M8W042436",
+    "customName": "Itel"
   }
 ]

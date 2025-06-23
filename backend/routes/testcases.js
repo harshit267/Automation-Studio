@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const {getConnectedDeviceModal} = require("../config/devicesutils")
+const {getConnectedDeviceModal,getDeviceInfoViaADB,} = require("../config/devicesutils")
 
 const router = express.Router();
 
@@ -37,7 +37,7 @@ router.get("/", (req, res) => {
   }
 
   try {
-    const deviceInfo =  getConnectedDeviceModal();
+    const deviceInfo =  getDeviceInfoViaADB();
     walk(testDir);
     res.json({ success: true, testCases , deviceInfo });
   } catch (err) {

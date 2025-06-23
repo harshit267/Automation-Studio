@@ -1,0 +1,27 @@
+{
+  "sessionId": "session-2025-06-23_10-21-07-AM",
+  "startTime": "2025-06-23T04:51:07.800Z",
+  "deviceInfo": {
+    "brand": "HUAWEI",
+    "model": "MAR-LX2",
+    "deviceID": "TRJDU19404007242",
+    "androidId": "9e0e5cc8158529a",
+    "platformVersion": "10",
+    "apiVersion": "29",
+    "locale": "en-IN",
+    "displayDensity": 480,
+    "screenSize": "1080x2312",
+    "timeZone": "Asia/Kolkata"
+  },
+  "testResults": [
+    {
+      "testName": "testupdate",
+      "scriptPath": "tests/binogi/testcases/home/testupdate.js",
+      "status": "passed",
+      "logs": "✅ Connected device ID: TRJDU19404007242\n❌ Element with  \"LET'S GO\" is not found on screen",
+      "logcatErrors": "06-23 10:21:14.925  2522 15662 E HwNaturalBase: [Binder:2522_C]: clearDataByOwner ignore: Found null values with the given ownerPkgName is[com.binogi].\n06-23 10:21:19.632 21266 21266 E com.binogi: Not starting debugger since process cannot load the jdwp agent.\n06-23 10:21:20.316  2015  3562 E DollieAdapterService: notifyActivityState pkg:com.binogi/com.binogi.MainActivity state:2 fg:true mUid:10516\n06-23 10:21:20.548  1348  1503 E WindowManager: win=Window{166ba49 u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true\n06-23 10:21:20.789 21266 21366 E com.binogi: Invalid ID 0x00000000.\n06-23 10:21:22.227   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#2]:1338: disconnect: not connected (req=1)\n06-23 10:21:22.248   655   738 E BufferQueueProducer: [com.binogi/com.binogi.MainActivity#1]:1338: disconnect: not connected (req=1)"
+    }
+  ],
+  "endTime": "2025-06-23T04:51:27.376Z",
+  "duration": "19.576s"
+}

@@ -21,9 +21,9 @@ async function click(textObjectOrString, { language = "en", delay = 100, print =
   }
 
   const tiers = [
-    { retries: 5, delay: 0 },
-    { retries: 5, delay: 500 }
-    // { retries: 5, delay: 1000 },
+    { retries: 2, delay: 0 },
+    { retries: 2, delay: 500 },
+    { retries: 2, delay: 1000 },
     // { retries: 2, delay: 5000 },
   ];
 
@@ -134,8 +134,70 @@ async function typeInInput(textObjectOrString, valueToType, { language = "en", d
   throw new Error(`Input with text "${finalText}" not found.`);
 }
 
+async function tryClick(text, options) {
+  try {
+    await click(text, options); // Your original retry-based click function
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+
+async function clickWithAutoScroll(textObjectOrString, {
+  language = "en",
+  delay = 100,
+  print = false,
+  maxScrolls = 2,
+  scrollPause = 500
+} = {}) {
+  const driver = getDriver();
+
+  let finalText;
+  if (typeof textObjectOrString === "object" && textObjectOrString !== null) {
+    finalText = textObjectOrString[language] || textObjectOrString["en"];
+  } else {
+    finalText = textObjectOrString;
+  }
+
+  if (!finalText) {
+    console.error(`❌ No text for "${language}"`);
+    throw new Error("Missing text to click.");
+  }
+
+  if (delay > 0) await driver.pause(delay);
+
+  for (let scrollAttempt = 0; scrollAttempt <= maxScrolls; scrollAttempt++) {
+    const wasClicked = await tryClick(finalText, { language, print });
+
+    if (wasClicked) return true;
+
+    // Scroll if not last attempt
+    if (scrollAttempt < maxScrolls) {
+      try {
+        await driver.execute("mobile: scrollGesture", {
+          left: 100,
+          top: 300,
+          width: 800,
+          height: 1000,
+          direction: "down",
+          percent: 1.0
+        });
+        await driver.pause(scrollPause);
+      } catch (err) {
+        console.warn(`⚠️ ScrollGesture failed at attempt ${scrollAttempt + 1}`);
+        break;
+      }
+    }
+  }
+
+  console.warn(`❌ "${finalText}" not found after ${maxScrolls} scrolls.`);
+  return false;
+}
+
 
 module.exports = {
   click,
   typeInInput,
+  clickWithAutoScroll
 };

@@ -15,8 +15,7 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 const storage = multer.diskStorage({
   destination: UPLOADS_DIR,
   filename: (req, file, cb) => {
-    const apkFileName = `binogi_latest.apk`; 
-    cb(null, apkFileName);
+    cb(null, file.originalname);
   },
 });
 
